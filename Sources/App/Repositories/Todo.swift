@@ -1,4 +1,5 @@
 import Foundation
+import Hummingbird
 
 struct Todo {
     var id: UUID
@@ -7,3 +8,5 @@ struct Todo {
     var order: Int?
     var url: String
 }
+
+extension Todo: ResponseEncodable, Decodable, Equatable {}

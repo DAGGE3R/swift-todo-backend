@@ -52,6 +52,6 @@ func buildRouter() -> Router<AppRequestContext> {
     router.get("/") { _, _ in
         return "Hello!"
     }
-    router.addRoutes(TodoController().endpoints, atPath: "/todos")
+    router.addRoutes(TodoController(repository: TodoMemoryRepository()).endpoints, atPath: "/todos")
     return router
 }
